@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EGパートナー | 挑戦を人生の転機に</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* PARTICLES */
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-3;
+}
+
+/* PROGRESS */
+
+.progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:linear-gradient(90deg,#00eaff,#00ffa6,#00eaff);
+z-index:9999;
+}
+
+/* NAV */
+
+.nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(12px);
+z-index:2000;
+}
+
+.logo{height:36px}
+
+/* CTA */
+
+.cta{
+display:inline-block;
+padding:16px 36px;
+font-weight:700;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+box-shadow:0 20px 60px rgba(0,114,255,.7);
+transition:.3s;
+}
+
+.cta:hover{
+transform:scale(1.1);
+box-shadow:0 30px 80px rgba(0,114,255,1);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+}
+
+.hero-inner{
+position:relative;
+z-index:2;
+max-width:900px;
+}
+
+.hero h1{
+font-size:56px;
+line-height:1.4;
+margin-bottom:40px;
+}
+
+/* STORY */
+
+.section{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+}
+
+.story{
+font-size:72px;
+font-weight:700;
+line-height:1.3;
+opacity:.15;
+transform:scale(.7);
+transition:1.2s ease;
+}
+
+.story.active{
+opacity:1;
+transform:scale(1);
+}
+
+/* TRUST */
+
+.trust{
+padding:120px 20px;
+text-align:center;
+background:#050505;
+}
+
+.trust h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.trust p{
+font-size:20px;
+line-height:1.8;
+}
+
+/* CTA BLOCK */
+
+.cta-block{
+padding:120px 20px;
+text-align:center;
+background:#000;
+}
+
+.cta-block h2{
+font-size:40px;
+margin-bottom:30px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:80px;
+background:#000;
+}
+
+footer a{
+color:#00c6ff;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+<div class="progress" id="progress"></div>
+
+<div class="nav">
+<img src="logo.png" class="logo">
+<a class="cta" href="https://line.me/R/ti/p/@048tcbkm?ts=06131452&oat_content=url">LINE無料相談</a>
+</div>
+
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="hero.mp4" type="video/mp4">
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-inner">
+
+<h1>
+挑戦し続けるお父さんを支える<br>
+戦略パートナー
+</h1>
+
+<a class="cta" href="https://line.me/R/ti/p/@048tcbkm?ts=06131452&oat_content=url">
+LINE無料相談
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+<div class="story">努力しているのに成果が出ない</div>
+</section>
+
+<section class="section">
+<div class="story">それは努力不足ではない</div>
+</section>
+
+<section class="section">
+<div class="story">方向が間違っている</div>
+</section>
+
+<section class="trust">
+
+<h2>EGパートナーとは</h2>
+
+<p>
+上場企業マーケターとしての経験と<br>
+副業5年以上の実践をもとに<br><br>
+
+挑戦する人の事業を<br>
+持続可能なビジネスへ設計する<br>
+戦略パートナーです。
+</p>
+
+</section>
+
+<section class="cta-block">
+
+<h2>まずはLINE無料相談から</h2>
+
+<a class="cta" href="https://line.me/R/ti/p/@048tcbkm?ts=06131452&oat_content=url">
+LINE登録する
+</a>
+
+</section>
+
+<footer>
+
+<p>
+Instagram :
+<a href="https://instagram.com/e_growth_partner">@e_growth_partner</a>
+</p>
+
+<p>
+<a href="tokushou.mp4">特定商取引法に基づく表記</a>
+</p>
+
+<p>© EGパートナー</p>
+
+</footer>
+
+<script>
+
+/* PROGRESS */
+
+const progress=document.getElementById("progress");
+
+window.addEventListener("scroll",()=>{
+
+let height=document.body.scrollHeight-window.innerHeight;
+let scroll=window.scrollY;
+progress.style.width=(scroll/height)*100+"%";
+
+});
+
+/* STORY */
+
+const story=document.querySelectorAll(".story");
+
+function animate(){
+
+let h=window.innerHeight;
+
+story.forEach(el=>{
+
+let top=el.getBoundingClientRect().top;
+
+if(top<h-200){
+el.classList.add("active")
+}
+
+})
+
+}
+
+window.addEventListener("scroll",animate);
+
+/* PARTICLES */
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<200;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+d:Math.random()*1.2
+});
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="rgba(255,255,255,0.7)";
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+
+p.y+=p.d;
+
+if(p.y>canvas.height){
+
+p.y=0;
+p.x=Math.random()*canvas.width;
+
+}
+
+});
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
+
+</script>
+
+</body>
+</html>
