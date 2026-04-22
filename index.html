@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,10 +7,12 @@
 
 <title>EGパートナー | 孤独な一人社長の戦略パートナー</title>
 
+<meta name="description" content="努力を無駄にしない戦略をつくる。孤独な経営判断を支える戦略パートナー。">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -40,13 +41,13 @@ height:100%;
 z-index:-4;
 }
 
-/* PROGRESS */
+/* PROGRESS BAR */
 
 .progress{
 position:fixed;
 top:0;
 left:0;
-height:4px;
+height:3px;
 width:0%;
 background:linear-gradient(90deg,#00eaff,#00ffa6,#00eaff);
 z-index:9999;
@@ -61,9 +62,9 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 40px;
+padding:16px 36px;
 background:rgba(0,0,0,.45);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 z-index:2000;
 }
 
@@ -75,8 +76,8 @@ height:36px;
 
 .cta{
 display:inline-block;
-padding:16px 36px;
-font-weight:700;
+padding:14px 28px;
+font-weight:600;
 color:#fff;
 text-decoration:none;
 border-radius:50px;
@@ -86,7 +87,7 @@ transition:.3s;
 }
 
 .cta:hover{
-transform:scale(1.1);
+transform:scale(1.08);
 box-shadow:0 30px 80px rgba(0,114,255,1);
 }
 
@@ -98,7 +99,7 @@ position:fixed;
 bottom:30px;
 right:30px;
 
-padding:16px 26px;
+padding:14px 24px;
 
 background:linear-gradient(135deg,#00c6ff,#0072ff);
 
@@ -120,7 +121,7 @@ animation:pulse 2s infinite;
 @keyframes pulse{
 
 0%{transform:scale(1)}
-50%{transform:scale(1.08)}
+50%{transform:scale(1.06)}
 100%{transform:scale(1)}
 
 }
@@ -138,12 +139,6 @@ overflow:hidden;
 padding:40px;
 }
 
-video{
-will-change:transform;
-}
-
-/* VIDEO */
-
 .video-section video{
 position:absolute;
 top:0;
@@ -152,10 +147,9 @@ width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
-animation:zoomHero 25s ease-in-out infinite alternate;
+animation:zoomHero 30s ease-in-out infinite alternate;
+filter:brightness(1.2) contrast(1.1) saturate(1.1);
 }
-
-/* ZOOM */
 
 @keyframes zoomHero{
 
@@ -164,7 +158,7 @@ animation:zoomHero 25s ease-in-out infinite alternate;
 
 }
 
-/* OVERLAY */
+/* VIDEO OVERLAY */
 
 .video-overlay{
 position:absolute;
@@ -173,7 +167,7 @@ height:100%;
 
 background:linear-gradient(
 to bottom,
-rgba(0,0,0,0.25),
+rgba(0,0,0,0.2),
 rgba(0,0,0,0.45)
 );
 
@@ -186,69 +180,92 @@ z-index:-1;
 position:relative;
 z-index:2;
 max-width:900px;
+
+opacity:0;
+transform:translateY(40px);
+animation:heroFade 1.6s ease forwards;
+}
+
+@keyframes heroFade{
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 .hero-text h1{
-font-size:35px;
-line-height:1.4;
-margin-bottom:40px;
+font-size:36px;
+line-height:1.5;
+font-weight:500;
 }
 
 /* STORY */
 
 .story{
-font-size:45px;
-font-weight:700;
-line-height:1.3;
-opacity:.15;
-transform:scale(.7);
+
+font-size:38px;
+font-weight:600;
+line-height:1.45;
+
+max-width:900px;
+margin:auto;
+padding:0 20px;
+
+opacity:0;
+transform:translateY(60px);
+
 transition:1.2s ease;
-z-index:2;
-position:relative;
+
 }
 
 .story.active{
+
 opacity:1;
-transform:scale(1);
+transform:translateY(0);
+
 }
 
 /* TRUST */
 
 .trust{
-padding:120px 20px;
+padding:140px 20px;
 text-align:center;
 background:#050505;
 }
 
 .trust h2{
-font-size:40px;
+font-size:36px;
 margin-bottom:40px;
 }
 
 .trust p{
 font-size:20px;
-line-height:1.8;
+line-height:1.9;
+opacity:.9;
 }
 
 /* CTA BLOCK */
 
 .cta-block{
-padding:120px 20px;
+padding:140px 20px;
 text-align:center;
 background:#000;
 }
 
 .cta-block h2{
-font-size:40px;
-margin-bottom:30px;
+font-size:32px;
+line-height:1.6;
 }
 
 /* FOOTER */
 
 footer{
-text-align:center;
-padding:80px;
+padding:120px 20px;
 background:#000;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
 }
 
 footer a{
@@ -263,13 +280,12 @@ text-decoration:none;
 .hero-text h1{
 font-size:20px;
 line-height:1.6;
-letter-spacing:.03em;
-padding:0 10px;
 }
 
 .story{
-font-size:28px;
-line-height:1.5;
+font-size:22px;
+line-height:1.65;
+max-width:92%;
 }
 
 .video-section{
@@ -281,42 +297,6 @@ bottom:20px;
 right:20px;
 }
 
-}
-
-footer{
-padding:120px 20px;
-background:#000;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-.footer-brand{
-font-size:20px;
-font-weight:700;
-margin-bottom:10px;
-letter-spacing:.05em;
-}
-
-.footer-message{
-opacity:.7;
-margin-bottom:30px;
-}
-
-.footer-links{
-display:flex;
-justify-content:center;
-gap:30px;
-margin-bottom:40px;
-}
-
-.footer-links a{
-color:#00c6ff;
-text-decoration:none;
-}
-
-.footer-copy{
-opacity:.5;
-font-size:14px;
 }
 
 </style>
@@ -342,19 +322,13 @@ href="https://line.me/R/ti/p/@048tcbkm?ts=06131452&oat_content=url">
 
 <a href="https://line.me/R/ti/p/@048tcbkm?ts=06131452&oat_content=url"
 class="floating-cta">
-
 LINE無料相談
-
 </a>
-
-<!-- HERO -->
 
 <section class="video-section">
 
 <video autoplay muted loop playsinline preload="metadata">
-
 <source src="hero.mp4" type="video/mp4">
-
 </video>
 
 <div class="video-overlay"></div>
@@ -365,7 +339,7 @@ LINE無料相談
 
 一人社長、<br>
 稼げるようになった。<br>
-それでも1秒も心が休まらない。<br>
+それでも1秒も心が休まらない。
 
 </h1>
 
@@ -376,47 +350,47 @@ LINE無料相談
 <section class="video-section">
 
 <video autoplay muted loop playsinline preload="metadata">
-
 <source src="brand.mp4" type="video/mp4">
-
 </video>
 
 <div class="video-overlay"></div>
 
-<div class="story">幸せと言える選択は<br>
-できているだろうか</div>
+<div class="story">
+幸せと言える選択は<br>
+できているだろうか
+</div>
 
 </section>
 
 <section class="video-section">
 
 <video autoplay muted loop playsinline preload="metadata">
-
 <source src="brand2.mp4" type="video/mp4">
-
 </video>
 
 <div class="video-overlay"></div>
 
-<div class="story">「家族のために」独立したはずが<br>
+<div class="story">
+「家族のために」独立したはずが<br>
 気づけば仕事に追われる毎日<br>
 日曜日さえスマホを置けない<br>
-そんな働き方になっていないだろうか？</div>
+そんな働き方になっていないだろうか？
+</div>
 
 </section>
 
 <section class="video-section">
 
 <video autoplay muted loop playsinline preload="metadata">
-
 <source src="brand3.mp4" type="video/mp4">
-
 </video>
 
 <div class="video-overlay"></div>
 
-<div class="story">何でも引き受ける<br>
-「便利屋経営」のままでいいですか？</div>
+<div class="story">
+何でも引き受ける<br>
+「便利屋経営」のままでいいですか？
+</div>
 
 </section>
 
@@ -426,9 +400,9 @@ LINE無料相談
 
 <p>
 
-努力を無駄しない戦略をつくる<br>
-社長の孤独な決断をしっかり支える戦略パートナーです<br>
-＼自走できるマーケティング戦略設計／<br>
+努力を無駄にしない戦略をつくる<br>
+社長の孤独な決断を支える戦略パートナーです<br>
+＼自走できるマーケティング戦略設計／
 
 </p>
 
@@ -436,34 +410,27 @@ LINE無料相談
 
 <section class="cta-block">
 
-<h2>さあ<br>
+<h2>
+さあ<br>
 誇りある「経営者」として<br>
-自分の人生を鮮やかにしよう</h2>
+自分の人生を鮮やかにしよう
+</h2>
 
 </section>
 
 <footer>
 
 <p>
-
 Instagram :
-
 <a href="https://instagram.com/e_growth_partner">
-
 @e_growth_partner
-
 </a>
-
 </p>
 
 <p>
-
 <a href="legal.html">
-
 特定商取引法に基づく表記
-
 </a>
-
 </p>
 
 <p>© EGパートナー</p>
@@ -487,29 +454,27 @@ progress.style.width=(scroll/height)*100+"%";
 
 /* STORY */
 
-const story=document.querySelectorAll(".story");
+const stories=document.querySelectorAll(".story");
 
-function animate(){
+function storyAnimation(){
 
-let h=window.innerHeight;
+let trigger=window.innerHeight*0.7;
 
-story.forEach(el=>{
+stories.forEach(el=>{
 
 let top=el.getBoundingClientRect().top;
 
-if(top<h-200){
-
+if(top<trigger){
 el.classList.add("active");
-
 }
 
 });
 
-requestAnimationFrame(animate);
+requestAnimationFrame(storyAnimation);
 
 }
 
-animate();
+storyAnimation();
 
 /* PARTICLES */
 
