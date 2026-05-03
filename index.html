@@ -176,7 +176,7 @@ transform:translateY(0);
 }
 
 .hero-text h1{
-font-size:36px;
+font-size:clamp(20px,3vw,36px);
 line-height:1.5;
 font-weight:500;
 text-shadow:0 4px 20px rgba(0,0,0,0.6);
@@ -185,7 +185,7 @@ text-shadow:0 4px 20px rgba(0,0,0,0.6);
 /* STORY */
 
 .story{
-font-size:38px;
+font-size:clamp(22px,4vw,38px);
 font-weight:600;
 line-height:1.45;
 max-width:900px;
@@ -210,12 +210,12 @@ background:#050505;
 }
 
 .trust h2{
-font-size:36px;
+font-size:clamp(24px,3vw,36px);
 margin-bottom:40px;
 }
 
 .trust p{
-font-size:20px;
+font-size:clamp(16px,2vw,20px);
 line-height:1.9;
 opacity:.9;
 }
@@ -235,6 +235,7 @@ display:flex;
 align-items:center;
 gap:12px;
 width:320px;
+max-width:90vw;
 background:rgba(15,15,15,0.95);
 border:1px solid rgba(255,255,255,0.15);
 border-radius:14px;
@@ -247,6 +248,7 @@ box-shadow:0 10px 40px rgba(0,0,0,0.6);
 flex-shrink:0;
 width:56px;
 height:56px;
+min-width:56px;
 border-radius:50%;
 object-fit:cover;
 display:block;
@@ -274,7 +276,7 @@ background:#000;
 }
 
 .cta-block h2{
-font-size:32px;
+font-size:clamp(20px,3vw,32px);
 line-height:1.6;
 }
 
@@ -354,7 +356,9 @@ text-decoration:none;
 
 <div class="story">
 家族のために独立したはずが<br>
-気づけば仕事に追われる毎日
+気づけば仕事に追われる毎日<br>
+日曜日さえスマホを置けない<br>
+そんな生活になってませんか？
 </div>
 
 </section>
@@ -391,8 +395,8 @@ AIや競合に代替えを利かせない<br>
 <section class="cta-block">
 
 <h2>
-さあ<br>
-あなたじゃないとダメだ、と言われる<br>
+さあ、<br>
+あなたじゃないとダメと言われる<br>
 熱狂的ファンに選ばれる社長になろう！
 </h2>
 
@@ -421,7 +425,7 @@ Instagram :
 
 <div class="review-box">
 
-<img src="/review-owner.jpg" class="review-photo" alt="代表">
+<img src="review-owner.jpg" class="review-photo" alt="代表">
 
 <div>
 
@@ -553,5 +557,3 @@ observer.observe(trustSection);
 
 </body>
 </html>
-
-
