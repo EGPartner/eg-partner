@@ -296,7 +296,47 @@ padding:20px;
 bottom:20px;
 right:20px;
 }
+/* REVIEW SLIDE */
 
+.review-slide{
+position:fixed;
+bottom:40px;
+left:-420px;
+z-index:4000;
+transition:left 0.8s ease;
+}
+
+.review-box{
+display:flex;
+align-items:center;
+width:320px;
+background:rgba(15,15,15,0.95);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:14px;
+padding:14px;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+.review-photo{
+width:54px;
+height:54px;
+border-radius:50%;
+object-fit:cover;
+margin-right:12px;
+}
+
+.review-text{
+font-size:13px;
+line-height:1.5;
+opacity:.9;
+}
+
+.review-author{
+font-size:12px;
+margin-top:6px;
+color:#00eaff;
+font-weight:600;
 }
 
 </style>
@@ -430,6 +470,27 @@ Instagram :
 <p>© EGパートナー</p>
 
 </footer>
+<!-- REVIEW SLIDE -->
+
+<div class="review-slide" id="reviewSlide">
+
+<div class="review-box">
+
+<img src="review-owner.jpg" class="review-photo">
+
+<div>
+
+<div class="review-text">
+正直、どこにでもある便利屋でした。<br>
+でもEGパートナーと組んでから<br>
+頼れる”暮らしの窓口”になりました。
+</div>
+
+<div class="review-author">
+某T代表 / 助っ人クルー
+</div>
+
+</div>
 
 <script>
 
@@ -517,7 +578,21 @@ requestAnimationFrame(draw);
 }
 
 draw();
+/* REVIEW SLIDE */
 
+let reviewShown=false;
+
+window.addEventListener("scroll",()=>{
+
+if(!reviewShown && window.scrollY>900){
+
+document.getElementById("reviewSlide").style.left="30px";
+
+reviewShown=true;
+
+}
+
+});
 </script>
 
 </body>
