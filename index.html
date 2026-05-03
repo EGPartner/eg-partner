@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -144,8 +145,6 @@ filter:brightness(0.9) contrast(1.1) saturate(1.1);
 100%{transform:scale(1.12)}
 }
 
-/* VIDEO OVERLAY */
-
 .video-overlay{
 position:absolute;
 width:100%;
@@ -222,7 +221,7 @@ line-height:1.9;
 opacity:.9;
 }
 
-/* REVIEW SLIDE */
+/* REVIEW */
 
 .review-slide{
 position:fixed;
@@ -235,26 +234,28 @@ transition:left 0.8s ease;
 .review-box{
 display:flex;
 align-items:center;
+gap:12px;
 width:320px;
 background:rgba(15,15,15,0.95);
 border:1px solid rgba(255,255,255,0.15);
 border-radius:14px;
-padding:14px;
+padding:16px;
 backdrop-filter:blur(10px);
 box-shadow:0 10px 40px rgba(0,0,0,0.6);
 }
 
 .review-photo{
-width:54px;
-height:54px;
+flex-shrink:0;
+width:56px;
+height:56px;
 border-radius:50%;
 object-fit:cover;
-margin-right:12px;
+display:block;
 }
 
 .review-text{
 font-size:13px;
-line-height:1.5;
+line-height:1.6;
 opacity:.9;
 }
 
@@ -292,22 +293,6 @@ color:#00c6ff;
 text-decoration:none;
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-.hero-text h1{
-font-size:18px;
-line-height:1.7;
-}
-
-.story{
-font-size:20px;
-line-height:1.7;
-}
-
-}
-
 </style>
 
 </head>
@@ -334,6 +319,7 @@ line-height:1.7;
 <source src="hero.mp4" type="video/mp4">
 </video>
 <div class="video-overlay"></div>
+
 <div class="hero-text">
 <h1>
 一人社長、<br>
@@ -341,40 +327,53 @@ line-height:1.7;
 それでも1秒も心が休まらない。
 </h1>
 </div>
+
 </section>
 
 <section class="video-section">
+
 <video autoplay muted loop playsinline>
 <source src="brand.mp4" type="video/mp4">
 </video>
+
 <div class="video-overlay"></div>
+
 <div class="story">
 本当にそれが<br>
 幸せと言える選択だったんだろうか
 </div>
+
 </section>
 
 <section class="video-section">
+
 <video autoplay muted loop playsinline>
 <source src="brand2.mp4" type="video/mp4">
 </video>
+
 <div class="video-overlay"></div>
+
 <div class="story">
 家族のために独立したはずが<br>
 気づけば仕事に追われる毎日
 </div>
+
 </section>
 
 <section class="video-section">
+
 <video autoplay muted loop playsinline>
 <source src="brand3.mp4" type="video/mp4">
 </video>
+
 <div class="video-overlay"></div>
+
 <div class="story">
 何でも引き受ける便利屋経営のまま<br>
 もし明日あなたがいなくなったら<br>
 誰が本気で困りますか？
 </div>
+
 </section>
 
 <section class="trust" id="trustSection">
@@ -423,7 +422,7 @@ Instagram :
 
 <div class="review-box">
 
-<img src="review-owner.jpg" class="review-photo">
+<img src="/review-owner.jpg" class="review-photo" alt="代表">
 
 <div>
 
@@ -555,3 +554,5 @@ observer.observe(trustSection);
 
 </body>
 </html>
+
+
