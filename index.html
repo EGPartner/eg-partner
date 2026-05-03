@@ -144,8 +144,6 @@ filter:brightness(0.9) contrast(1.1) saturate(1.1);
 100%{transform:scale(1.12)}
 }
 
-/* VIDEO OVERLAY */
-
 .video-overlay{
 position:absolute;
 width:100%;
@@ -235,67 +233,6 @@ font-size:32px;
 line-height:1.6;
 }
 
-/* FOOTER */
-
-footer{
-padding:120px 20px;
-background:#000;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-footer a{
-color:#00c6ff;
-text-decoration:none;
-}
-
-/* MOBILE */
-
-@media (max-width:768px){
-
-.video-overlay{
-background:linear-gradient(
-to bottom,
-rgba(0,0,0,0.45),
-rgba(0,0,0,0.7)
-);
-}
-
-.hero-text{
-max-width:320px;
-margin:auto;
-margin-top:110px;
-}
-
-.hero-text h1{
-font-size:18px;
-line-height:1.7;
-}
-
-.story{
-font-size:20px;
-line-height:1.7;
-padding:0 30px;
-}
-
-.trust p{
-font-size:16px;
-line-height:1.8;
-}
-
-.cta-block h2{
-font-size:22px;
-line-height:1.7;
-}
-
-.video-section{
-padding:20px;
-}
-
-.floating-cta{
-bottom:20px;
-right:20px;
-}
 /* REVIEW SLIDE */
 
 .review-slide{
@@ -339,6 +276,33 @@ color:#00eaff;
 font-weight:600;
 }
 
+/* FOOTER */
+
+footer{
+padding:120px 20px;
+background:#000;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer a{
+color:#00c6ff;
+text-decoration:none;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.hero-text h1{font-size:18px;}
+
+.story{
+font-size:20px;
+line-height:1.7;
+}
+
+}
+
 </style>
 
 </head>
@@ -351,13 +315,12 @@ font-weight:600;
 
 <div class="nav">
 <img src="logo.png" class="logo">
-<a class="cta" href="https://line.me/R/ti/p/@048tcbkm?ts=06131452&oat_content=url">
+<a class="cta" href="https://line.me/R/ti/p/@048tcbkm">
 無料相談チャット
 </a>
 </div>
 
-<a href="https://line.me/R/ti/p/@048tcbkm?ts=06131452&oat_content=url"
-class="floating-cta">
+<a href="https://line.me/R/ti/p/@048tcbkm" class="floating-cta">
 1タップマーケ診断
 </a>
 
@@ -370,20 +333,18 @@ class="floating-cta">
 <div class="video-overlay"></div>
 
 <div class="hero-text">
-
 <h1>
 一人社長、<br>
 稼げるようになった。<br>
 それでも1秒も心が休まらない。
 </h1>
-
 </div>
 
 </section>
 
 <section class="video-section">
 
-<video autoplay muted loop playsinline preload="metadata">
+<video autoplay muted loop playsinline>
 <source src="brand.mp4" type="video/mp4">
 </video>
 
@@ -398,7 +359,7 @@ class="floating-cta">
 
 <section class="video-section">
 
-<video autoplay muted loop playsinline preload="metadata">
+<video autoplay muted loop playsinline>
 <source src="brand2.mp4" type="video/mp4">
 </video>
 
@@ -406,24 +367,22 @@ class="floating-cta">
 
 <div class="story">
 家族のために独立したはずが<br>
-気づけば仕事に追われる毎日<br>
-日曜日さえスマホを置けない<br>
-そんな生活になってませんか？
+気づけば仕事に追われる毎日
 </div>
 
 </section>
 
-<section class="video-section">
+<section class="video-section" id="brand4">
 
-<video autoplay muted loop playsinline preload="metadata">
+<video autoplay muted loop playsinline>
 <source src="brand3.mp4" type="video/mp4">
 </video>
 
 <div class="video-overlay"></div>
 
 <div class="story">
-何でも引き受ける便利屋経営のまま<br>
-もし明日あなたがいなくなったら<br>
+何でも引き受ける便利屋経営、<br>
+もし明日なくなったら<br>
 誰が本気で困りますか？
 </div>
 
@@ -434,10 +393,8 @@ class="floating-cta">
 <h2>EGパートナーは</h2>
 
 <p>
-「安いから、便利だから」と<br>
-AIや競合に代替えを利かせない<br>
 事業の「幹」を明確にし、太く育てる<br>
-マーケティング戦略パートナーです<br>
+マーケティング戦略パートナーです
 </p>
 
 </section>
@@ -445,9 +402,8 @@ AIや競合に代替えを利かせない<br>
 <section class="cta-block">
 
 <h2>
-さあ<br>
-あなたじゃないとダメだ、と言われる<br>
-熱狂的ファンに選ばれる社長になろう！
+あなたじゃないとダメ、と言われる<br>
+変えの効かない事業にしましょう
 </h2>
 
 </section>
@@ -470,7 +426,6 @@ Instagram :
 <p>© EGパートナー</p>
 
 </footer>
-<!-- REVIEW SLIDE -->
 
 <div class="review-slide" id="reviewSlide">
 
@@ -483,11 +438,15 @@ Instagram :
 <div class="review-text">
 正直、どこにでもある便利屋でした。<br>
 でもEGパートナーと組んでから<br>
-頼れる”暮らしの窓口”になりました。
+頼れる“暮らしの窓口”になりました。
 </div>
 
 <div class="review-author">
-某T代表 / 助っ人クルー
+某M代表 / 助っ人クルー
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -499,12 +458,9 @@ Instagram :
 const progress=document.getElementById("progress");
 
 window.addEventListener("scroll",()=>{
-
 let height=document.body.scrollHeight-window.innerHeight;
 let scroll=window.scrollY;
-
 progress.style.width=(scroll/height)*100+"%";
-
 });
 
 /* STORY */
@@ -516,17 +472,11 @@ function storyAnimation(){
 let trigger=window.innerHeight*0.7;
 
 stories.forEach(el=>{
-
 let top=el.getBoundingClientRect().top;
-
-if(top<trigger){
-el.classList.add("active");
-}
-
+if(top<trigger){el.classList.add("active");}
 });
 
 requestAnimationFrame(storyAnimation);
-
 }
 
 storyAnimation();
@@ -542,14 +492,12 @@ canvas.height=window.innerHeight;
 let particles=[];
 
 for(let i=0;i<120;i++){
-
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 r:Math.random()*2,
 d:Math.random()*1.2
 });
-
 }
 
 function draw(){
@@ -559,7 +507,6 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 ctx.fillStyle="rgba(255,255,255,0.7)";
 
 particles.forEach(p=>{
-
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
@@ -574,25 +521,27 @@ p.x=Math.random()*canvas.width;
 });
 
 requestAnimationFrame(draw);
-
 }
 
 draw();
-/* REVIEW SLIDE */
 
-let reviewShown=false;
+/* REVIEW SLIDE brand4 */
 
-window.addEventListener("scroll",()=>{
+const brand4=document.querySelector("#brand4");
+const review=document.getElementById("reviewSlide");
 
-if(!reviewShown && window.scrollY>900){
+const observer=new IntersectionObserver((entries)=>{
 
-document.getElementById("reviewSlide").style.left="30px";
-
-reviewShown=true;
-
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+review.style.left="30px";
 }
-
 });
+
+},{threshold:0.6});
+
+observer.observe(brand4);
+
 </script>
 
 </body>
