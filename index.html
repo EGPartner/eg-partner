@@ -144,6 +144,8 @@ filter:brightness(0.9) contrast(1.1) saturate(1.1);
 100%{transform:scale(1.12)}
 }
 
+/* VIDEO OVERLAY */
+
 .video-overlay{
 position:absolute;
 width:100%;
@@ -220,19 +222,6 @@ line-height:1.9;
 opacity:.9;
 }
 
-/* CTA BLOCK */
-
-.cta-block{
-padding:140px 20px;
-text-align:center;
-background:#000;
-}
-
-.cta-block h2{
-font-size:32px;
-line-height:1.6;
-}
-
 /* REVIEW SLIDE */
 
 .review-slide{
@@ -276,6 +265,19 @@ color:#00eaff;
 font-weight:600;
 }
 
+/* CTA BLOCK */
+
+.cta-block{
+padding:140px 20px;
+text-align:center;
+background:#000;
+}
+
+.cta-block h2{
+font-size:32px;
+line-height:1.6;
+}
+
 /* FOOTER */
 
 footer{
@@ -294,7 +296,10 @@ text-decoration:none;
 
 @media (max-width:768px){
 
-.hero-text h1{font-size:18px;}
+.hero-text h1{
+font-size:18px;
+line-height:1.7;
+}
 
 .story{
 font-size:20px;
@@ -325,13 +330,10 @@ line-height:1.7;
 </a>
 
 <section class="video-section">
-
-<video autoplay muted loop playsinline preload="metadata">
+<video autoplay muted loop playsinline>
 <source src="hero.mp4" type="video/mp4">
 </video>
-
 <div class="video-overlay"></div>
-
 <div class="hero-text">
 <h1>
 一人社長、<br>
@@ -339,60 +341,49 @@ line-height:1.7;
 それでも1秒も心が休まらない。
 </h1>
 </div>
-
 </section>
 
 <section class="video-section">
-
 <video autoplay muted loop playsinline>
 <source src="brand.mp4" type="video/mp4">
 </video>
-
 <div class="video-overlay"></div>
-
 <div class="story">
 本当にそれが<br>
 幸せと言える選択だったんだろうか
 </div>
-
 </section>
 
 <section class="video-section">
-
 <video autoplay muted loop playsinline>
 <source src="brand2.mp4" type="video/mp4">
 </video>
-
 <div class="video-overlay"></div>
-
 <div class="story">
 家族のために独立したはずが<br>
 気づけば仕事に追われる毎日
 </div>
-
 </section>
 
-<section class="video-section" id="brand4">
-
+<section class="video-section">
 <video autoplay muted loop playsinline>
 <source src="brand3.mp4" type="video/mp4">
 </video>
-
 <div class="video-overlay"></div>
-
 <div class="story">
-何でも引き受ける便利屋経営、<br>
-もし明日なくなったら<br>
+何でも引き受ける便利屋経営のまま<br>
+もし明日あなたがいなくなったら<br>
 誰が本気で困りますか？
 </div>
-
 </section>
 
-<section class="trust">
+<section class="trust" id="trustSection">
 
 <h2>EGパートナーは</h2>
 
 <p>
+「安いから、便利だから」と<br>
+AIや競合に代替えを利かせない<br>
 事業の「幹」を明確にし、太く育てる<br>
 マーケティング戦略パートナーです
 </p>
@@ -402,8 +393,9 @@ line-height:1.7;
 <section class="cta-block">
 
 <h2>
-あなたじゃないとダメ、と言われる<br>
-変えの効かない事業にしましょう
+さあ<br>
+あなたじゃないとダメだ、と言われる<br>
+熱狂的ファンに選ばれる社長になろう！
 </h2>
 
 </section>
@@ -442,7 +434,7 @@ Instagram :
 </div>
 
 <div class="review-author">
-某M代表 / 助っ人クルー
+某T代表 / 助っ人クルー
 </div>
 
 </div>
@@ -458,9 +450,12 @@ Instagram :
 const progress=document.getElementById("progress");
 
 window.addEventListener("scroll",()=>{
+
 let height=document.body.scrollHeight-window.innerHeight;
 let scroll=window.scrollY;
+
 progress.style.width=(scroll/height)*100+"%";
+
 });
 
 /* STORY */
@@ -472,11 +467,17 @@ function storyAnimation(){
 let trigger=window.innerHeight*0.7;
 
 stories.forEach(el=>{
+
 let top=el.getBoundingClientRect().top;
-if(top<trigger){el.classList.add("active");}
+
+if(top<trigger){
+el.classList.add("active");
+}
+
 });
 
 requestAnimationFrame(storyAnimation);
+
 }
 
 storyAnimation();
@@ -492,12 +493,14 @@ canvas.height=window.innerHeight;
 let particles=[];
 
 for(let i=0;i<120;i++){
+
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 r:Math.random()*2,
 d:Math.random()*1.2
 });
+
 }
 
 function draw(){
@@ -507,6 +510,7 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 ctx.fillStyle="rgba(255,255,255,0.7)";
 
 particles.forEach(p=>{
+
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
@@ -521,26 +525,31 @@ p.x=Math.random()*canvas.width;
 });
 
 requestAnimationFrame(draw);
+
 }
 
 draw();
 
-/* REVIEW SLIDE brand4 */
+/* REVIEW SLIDE */
 
-const brand4=document.querySelector("#brand4");
-const review=document.getElementById("reviewSlide");
+const trustSection=document.querySelector("#trustSection");
+const reviewSlide=document.getElementById("reviewSlide");
 
 const observer=new IntersectionObserver((entries)=>{
 
 entries.forEach(entry=>{
+
 if(entry.isIntersecting){
-review.style.left="30px";
+reviewSlide.style.left="30px";
+}else{
+reviewSlide.style.left="-420px";
 }
+
 });
 
-},{threshold:0.6});
+},{threshold:0.5});
 
-observer.observe(brand4);
+observer.observe(trustSection);
 
 </script>
 
