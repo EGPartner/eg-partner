@@ -224,11 +224,14 @@ opacity:.9;
 
 .review-slide{
 position:fixed;
-bottom:40px;
 left:-420px;
 z-index:4000;
 transition:left 0.8s ease;
 }
+
+.review-1{bottom:40px;}
+.review-2{bottom:120px;}
+.review-3{bottom:200px;}
 
 .review-box{
 display:flex;
@@ -293,26 +296,11 @@ border-top:1px solid rgba(255,255,255,.08);
 footer a{
 color:#00c6ff;
 text-decoration:none;
-
 }
 
 /* MOBILE */
 
 @media (max-width:768px){
-
-.video-overlay{
-background:linear-gradient(
-to bottom,
-rgba(0,0,0,0.45),
-rgba(0,0,0,0.7)
-);
-}
-
-.hero-text{
-max-width:320px;
-margin:auto;
-margin-top:110px;
-}
 
 .hero-text h1{
 font-size:18px;
@@ -322,26 +310,6 @@ line-height:1.7;
 .story{
 font-size:20px;
 line-height:1.7;
-padding:0 30px;
-}
-
-.trust p{
-font-size:16px;
-line-height:1.8;
-}
-
-.cta-block h2{
-font-size:22px;
-line-height:1.7;
-}
-
-.video-section{
-padding:20px;
-}
-
-.floating-cta{
-bottom:20px;
-right:20px;
 }
 
 }
@@ -477,137 +445,158 @@ Instagram :
 
 </footer>
 
-<div class="review-slide" id="reviewSlide">
-
+<!-- 口コミ① -->
+<div class="review-slide review-1" id="review1">
 <div class="review-box">
-
-<img src="./review-owner.jpg" class="review-photo" alt="活躍の様子">
-
+<img src="./review-owner.png" class="review-photo">
 <div>
-
 <div class="review-text">
 正直、どこにでもある便利屋でした。<br>
 でもEGパートナーと組んでから<br>
 頼れる“暮らしの窓口”になりました。
 </div>
-
 <div class="review-author">
 某M代表 / 助っ人クルー
 </div>
-
+</div>
+</div>
 </div>
 
+<!-- 口コミ② -->
+<div class="review-slide review-2" id="review2">
+<div class="review-box">
+<img src="./review-owner2.png" class="review-photo">
+<div>
+<div class="review-text">
+方向が明確になってから<br>
+無駄な動きが一気に減りました。<br>
+売上より“確信”が得られた感覚です。
+</div>
+<div class="review-author">
+広島県 / 個人事業主
+</div>
+</div>
+</div>
 </div>
 
+<!-- 口コミ③ -->
+<div class="review-slide review-3" id="review3">
+<div class="review-box">
+<img src="./review-owner3.png" class="review-photo">
+<div>
+<div class="review-text">
+迷いが消えて<br>
+やるべきことが明確になりました。<br>
+行動が変わりました。
+</div>
+<div class="review-author">
+個人事業主 / 経営者
+</div>
+</div>
+</div>
 </div>
 
 <script>
 
 /* PROGRESS */
-
 const progress=document.getElementById("progress");
-
 window.addEventListener("scroll",()=>{
-
 let height=document.body.scrollHeight-window.innerHeight;
 let scroll=window.scrollY;
-
 progress.style.width=(scroll/height)*100+"%";
-
 });
 
 /* STORY */
-
 const stories=document.querySelectorAll(".story");
-
 function storyAnimation(){
-
 let trigger=window.innerHeight*0.7;
-
 stories.forEach(el=>{
-
 let top=el.getBoundingClientRect().top;
-
 if(top<trigger){
 el.classList.add("active");
 }
-
 });
-
 requestAnimationFrame(storyAnimation);
-
 }
-
 storyAnimation();
 
 /* PARTICLES */
-
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
-
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
-
 let particles=[];
-
 for(let i=0;i<120;i++){
-
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 r:Math.random()*2,
 d:Math.random()*1.2
 });
-
 }
-
 function draw(){
-
 ctx.clearRect(0,0,canvas.width,canvas.height);
-
 ctx.fillStyle="rgba(255,255,255,0.7)";
-
 particles.forEach(p=>{
-
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
-
 p.y+=p.d;
-
 if(p.y>canvas.height){
 p.y=0;
 p.x=Math.random()*canvas.width;
 }
-
 });
-
 requestAnimationFrame(draw);
-
 }
-
 draw();
 
-/* REVIEW SLIDE */
+/* REVIEW 自動ループ */
+const r1=document.getElementById("review1");
+const r2=document.getElementById("review2");
+const r3=document.getElementById("review3");
+const trust=document.getElementById("trustSection");
 
-const trustSection=document.querySelector("#trustSection");
-const reviewSlide=document.getElementById("reviewSlide");
+let loop;
 
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-reviewSlide.style.left="30px";
+const obs=new IntersectionObserver((entries)=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+startLoop();
 }else{
-reviewSlide.style.left="-420px";
+stopLoop();
 }
-
 });
-
 },{threshold:0.5});
 
-observer.observe(trustSection);
+obs.observe(trust);
+
+function startLoop(){
+if(loop) return;
+show();
+loop=setInterval(()=>{
+reset();
+setTimeout(show,300);
+},6000);
+}
+
+function stopLoop(){
+clearInterval(loop);
+loop=null;
+reset();
+}
+
+function show(){
+r1.style.left="30px";
+setTimeout(()=>{r2.style.left="30px";},800);
+setTimeout(()=>{r3.style.left="30px";},1600);
+}
+
+function reset(){
+r1.style.left="-420px";
+r2.style.left="-420px";
+r3.style.left="-420px";
+}
 
 </script>
 
