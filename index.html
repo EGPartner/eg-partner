@@ -1,15 +1,19 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRC83HDR8T"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-  gtag('config', 'G-VRC83HDR8T');
+gtag('config', 'G-VRC83HDR8T');
 </script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -92,6 +96,7 @@ border-radius:50px;
 background:linear-gradient(135deg,#00c6ff,#0072ff);
 box-shadow:0 20px 60px rgba(0,114,255,.7);
 transition:.3s;
+font-size:14px;
 }
 
 .cta:hover{
@@ -114,6 +119,7 @@ box-shadow:0 10px 40px rgba(0,114,255,.8);
 text-decoration:none;
 z-index:3000;
 animation:pulse 2s infinite;
+font-size:14px;
 }
 
 @keyframes pulse{
@@ -184,24 +190,25 @@ transform:translateY(0);
 }
 
 .hero-text h1{
-font-size:clamp(20px,3vw,36px);
-line-height:1.5;
-font-weight:500;
+font-size:clamp(22px,3vw,38px);
+line-height:1.6;
+font-weight:600;
 text-shadow:0 4px 20px rgba(0,0,0,0.6);
 }
 
 /* STORY */
 
 .story{
-font-size:clamp(22px,4vw,38px);
+font-size:clamp(22px,4vw,40px);
 font-weight:600;
-line-height:1.45;
+line-height:1.6;
 max-width:900px;
 margin:auto;
 padding:0 20px;
 opacity:0;
 transform:translateY(60px);
 transition:1.2s ease;
+text-shadow:0 4px 20px rgba(0,0,0,.55);
 }
 
 .story.active{
@@ -218,14 +225,33 @@ background:#050505;
 }
 
 .trust h2{
-font-size:clamp(24px,3vw,36px);
+font-size:clamp(26px,3vw,38px);
 margin-bottom:40px;
 }
 
 .trust p{
-font-size:clamp(16px,2vw,20px);
-line-height:1.9;
-opacity:.9;
+font-size:clamp(17px,2vw,22px);
+line-height:2;
+opacity:.92;
+}
+
+.trust-list{
+margin-top:50px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:14px;
+max-width:900px;
+margin-inline:auto;
+}
+
+.trust-item{
+padding:14px 22px;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:999px;
+background:rgba(255,255,255,0.04);
+font-size:14px;
+backdrop-filter:blur(10px);
 }
 
 /* REVIEW */
@@ -235,41 +261,45 @@ position:fixed;
 left:-420px;
 z-index:4000;
 transition:left 0.8s ease;
+will-change:left;
 }
 
 .review-1{bottom:40px;}
-.review-2{bottom:120px;}
-.review-3{bottom:200px;}
+.review-2{bottom:128px;}
+.review-3{bottom:216px;}
 
 .review-box{
 display:flex;
 align-items:center;
-gap:12px;
-width:320px;
-max-width:90vw;
+gap:14px;
+width:340px;
+max-width:92vw;
 background:rgba(15,15,15,0.95);
 border:1px solid rgba(255,255,255,0.15);
-border-radius:14px;
+border-radius:18px;
 padding:16px;
 backdrop-filter:blur(10px);
 box-shadow:0 10px 40px rgba(0,0,0,0.6);
 }
 
 .review-photo{
-flex:0 0 56px;
-width:56px;
-height:56px;
-min-width:56px;
-min-height:56px;
+flex:0 0 62px;
+width:62px;
+height:62px;
+min-width:62px;
+min-height:62px;
 border-radius:50%;
 object-fit:cover;
 display:block;
+background:#111;
 }
 
 .review-text{
 font-size:13px;
-line-height:1.6;
-opacity:.9;
+line-height:1.7;
+opacity:.92;
+word-break:keep-all;
+overflow-wrap:break-word;
 }
 
 .review-author{
@@ -288,8 +318,8 @@ background:#000;
 }
 
 .cta-block h2{
-font-size:clamp(20px,3vw,32px);
-line-height:1.6;
+font-size:clamp(22px,3vw,34px);
+line-height:1.8;
 }
 
 /* FOOTER */
@@ -301,6 +331,10 @@ text-align:center;
 border-top:1px solid rgba(255,255,255,.08);
 }
 
+footer p{
+margin-bottom:14px;
+}
+
 footer a{
 color:#00c6ff;
 text-decoration:none;
@@ -310,15 +344,81 @@ text-decoration:none;
 
 @media (max-width:768px){
 
+.nav{
+padding:12px 18px;
+}
+
+.logo{
+height:30px;
+}
+
+.cta{
+padding:12px 18px;
+font-size:12px;
+}
+
+.floating-cta{
+right:14px;
+bottom:18px;
+padding:12px 18px;
+font-size:12px;
+}
+
 .hero-text h1{
 font-size:18px;
-line-height:1.7;
+line-height:1.8;
+padding:0 10px;
 }
 
 .story{
 font-size:20px;
-line-height:1.7;
+line-height:1.8;
+padding:0 16px;
 }
+
+.trust h2{
+font-size:24px;
+}
+
+.trust p{
+font-size:15px;
+line-height:1.9;
+}
+
+.trust-item{
+font-size:12px;
+padding:12px 16px;
+}
+
+.cta-block h2{
+font-size:20px;
+line-height:1.9;
+}
+
+.review-box{
+width:300px;
+padding:14px;
+}
+
+.review-photo{
+width:52px;
+height:52px;
+min-width:52px;
+min-height:52px;
+}
+
+.review-text{
+font-size:12px;
+line-height:1.65;
+}
+
+.review-author{
+font-size:11px;
+}
+
+.review-1{bottom:24px;}
+.review-2{bottom:112px;}
+.review-3{bottom:200px;}
 
 }
 
@@ -333,13 +433,26 @@ line-height:1.7;
 <div class="progress" id="progress"></div>
 
 <div class="nav">
+
 <img src="logo.png" class="logo">
-<a class="cta" href="https://line.me/R/ti/p/@048tcbkm">
+
+<a class="cta"
+href="https://line.me/R/ti/p/@048tcbkm"
+onclick="gtag('event','cta_click',{
+event_category:'CTA',
+event_label:'header'
+});">
 無料相談チャット
 </a>
+
 </div>
 
-<a href="https://line.me/R/ti/p/@048tcbkm" class="floating-cta">
+<a href="https://line.me/R/ti/p/@048tcbkm"
+class="floating-cta"
+onclick="gtag('event','cta_click',{
+event_category:'CTA',
+event_label:'floating'
+});">
 1タップマーケ診断
 </a>
 
@@ -355,7 +468,7 @@ line-height:1.7;
 <h1>
 一人社長、<br>
 稼げるようになった。<br>
-これでいいって初めて感じた。<br>
+これでいいって初めて感じた。
 </h1>
 </div>
 
@@ -417,10 +530,34 @@ line-height:1.7;
 
 <p>
 何をやらないかを決めることで<br>
-迷いをなくし<br>
+あなたにしかない強みを言語化し<br>
 進むべき方向を明確にする<br>
 マーケティング戦略パートナーです
 </p>
+
+<div class="trust-list">
+
+<div class="trust-item">
+事業の方向性整理
+</div>
+
+<div class="trust-item">
+USP設計
+</div>
+
+<div class="trust-item">
+SNS導線設計
+</div>
+
+<div class="trust-item">
+LP改善
+</div>
+
+<div class="trust-item">
+LINE導線設計
+</div>
+
+</div>
 
 </section>
 
@@ -456,16 +593,24 @@ Instagram :
 <!-- 口コミ① -->
 <div class="review-slide review-1" id="review1">
 <div class="review-box">
-<img src="./review-owner.png" class="review-photo">
+
+<img src="./review-owner.png"
+class="review-photo"
+loading="eager"
+decoding="async">
+
 <div>
+
 <div class="review-text">
 正直、どこにでもある便利屋でした。<br>
 でもEGパートナーと組んでから<br>
 地元の“暮らしの窓口”になりました。
 </div>
+
 <div class="review-author">
 某M代表 / 助っ人クルー様
 </div>
+
 </div>
 </div>
 </div>
@@ -473,16 +618,24 @@ Instagram :
 <!-- 口コミ② -->
 <div class="review-slide review-2" id="review2">
 <div class="review-box">
-<img src="./review-owner2.png" class="review-photo">
+
+<img src="./review-owner2.png"
+class="review-photo"
+loading="eager"
+decoding="async">
+
 <div>
+
 <div class="review-text">
 副業でコンサルを始めましたが<br>
 SNSの真似ではだめ。安定した今は<br>
 家族をご飯に連れて行けるまで成長！
 </div>
+
 <div class="review-author">
 広島県 / T個人事業主様
 </div>
+
 </div>
 </div>
 </div>
@@ -490,16 +643,24 @@ SNSの真似ではだめ。安定した今は<br>
 <!-- 口コミ③ -->
 <div class="review-slide review-3" id="review3">
 <div class="review-box">
-<img src="./review-owner3.png" class="review-photo">
+
+<img src="./review-owner3.png"
+class="review-photo"
+loading="eager"
+decoding="async">
+
 <div>
+
 <div class="review-text">
 趣味のハンドメイドが事業に！<br>
 休日は大好きな子供とカフェで<br>
 ランチをするのが趣味に。
 </div>
+
 <div class="review-author">
 山口県 / Y経営者様
 </div>
+
 </div>
 </div>
 </div>
@@ -507,106 +668,179 @@ SNSの真似ではだめ。安定した今は<br>
 <script>
 
 /* PROGRESS */
+
 const progress=document.getElementById("progress");
+
 window.addEventListener("scroll",()=>{
+
 let height=document.body.scrollHeight-window.innerHeight;
 let scroll=window.scrollY;
+
 progress.style.width=(scroll/height)*100+"%";
+
 });
 
 /* STORY */
+
 const stories=document.querySelectorAll(".story");
+
 function storyAnimation(){
+
 let trigger=window.innerHeight*0.7;
+
 stories.forEach(el=>{
+
 let top=el.getBoundingClientRect().top;
+
 if(top<trigger){
 el.classList.add("active");
 }
+
 });
+
 requestAnimationFrame(storyAnimation);
+
 }
+
 storyAnimation();
 
 /* PARTICLES */
+
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
+
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
+
+window.addEventListener("resize",()=>{
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+});
+
 let particles=[];
+
 for(let i=0;i<120;i++){
+
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 r:Math.random()*2,
 d:Math.random()*1.2
 });
+
 }
+
 function draw(){
+
 ctx.clearRect(0,0,canvas.width,canvas.height);
+
 ctx.fillStyle="rgba(255,255,255,0.7)";
+
 particles.forEach(p=>{
+
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
+
 p.y+=p.d;
+
 if(p.y>canvas.height){
+
 p.y=0;
 p.x=Math.random()*canvas.width;
+
 }
+
 });
+
 requestAnimationFrame(draw);
+
 }
+
 draw();
 
 /* REVIEW 自動ループ */
+
 const r1=document.getElementById("review1");
 const r2=document.getElementById("review2");
 const r3=document.getElementById("review3");
+
 const trust=document.getElementById("trustSection");
 
 let loop;
 
 const obs=new IntersectionObserver((entries)=>{
+
 entries.forEach(e=>{
+
 if(e.isIntersecting){
+
 startLoop();
+
 }else{
+
 stopLoop();
+
 }
+
 });
-},{threshold:0.5});
+
+},{threshold:0.45});
 
 obs.observe(trust);
 
 function startLoop(){
+
 if(loop) return;
+
 show();
+
 loop=setInterval(()=>{
+
 reset();
+
 setTimeout(show,300);
-},6000);
+
+},7000);
+
 }
 
 function stopLoop(){
+
 clearInterval(loop);
+
 loop=null;
+
 reset();
+
 }
 
 function show(){
-r1.style.left="30px";
-setTimeout(()=>{r2.style.left="30px";},800);
-setTimeout(()=>{r3.style.left="30px";},1600);
+
+r1.style.left="24px";
+
+setTimeout(()=>{
+r2.style.left="24px";
+},900);
+
+setTimeout(()=>{
+r3.style.left="24px";
+},1800);
+
 }
 
 function reset(){
+
 r1.style.left="-420px";
 r2.style.left="-420px";
 r3.style.left="-420px";
+
 }
 
 </script>
 
 </body>
 </html>
+```
