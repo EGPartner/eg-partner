@@ -33,12 +33,22 @@ padding:0;
 box-sizing:border-box;
 }
 
+html,
+body{
+margin:0;
+padding:0;
+background:#000;
+overflow-x:hidden;
+}
+
 body{
 font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,sans-serif;
-background:#000;
 color:#fff;
-overflow-x:hidden;
 scroll-behavior:smooth;
+}
+section{
+margin:0;
+padding:0;
 }
 
 /* PARTICLES */
@@ -130,14 +140,15 @@ font-size:14px;
 /* VIDEO SECTION */
 
 .video-section{
-min-height:100svh;
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-position:relative;
 overflow:hidden;
 padding:0;
+min-height:100vh;
+height:100dvh;
 }
 
 .video-section video{
@@ -452,7 +463,7 @@ event_label:'floating'
 
 <section class="video-section">
 
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline preload="auto">
 <source src="hero.mp4" type="video/mp4">
 </video>
 
@@ -470,7 +481,7 @@ event_label:'floating'
 
 <section class="video-section">
 
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline preload="auto">
 <source src="brand.mp4" type="video/mp4">
 </video>
 
@@ -487,7 +498,7 @@ SNSも集客も頑張ってる。<br>
 
 <section class="video-section">
 
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline preload="auto">
 <source src="brand2.mp4" type="video/mp4">
 </video>
 
@@ -495,8 +506,9 @@ SNSも集客も頑張ってる。<br>
 
 <div class="story">
 家族のために独立したはずが<br>
-気づけば、削られている。
-家族との時間が、こんなに。<br>
+気づけば、削られていた。<br>
+一番大切だったはずの<br>
+家族との時間が。<br>
 なのに、ほとんどの一人社長が<br>
 このままでいいのか？って<br>
 考える余裕すらない。
@@ -506,7 +518,7 @@ SNSも集客も頑張ってる。<br>
 
 <section class="video-section">
 
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline preload="auto">
 <source src="brand3.mp4" type="video/mp4">
 </video>
 
